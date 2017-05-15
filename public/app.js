@@ -16,28 +16,34 @@ app.config(function($routeProvider,$locationProvider){
 app.controller('main',function($scope,$sce,$routeParams){
   var vids = [
     {
-      video:"https://www.youtube.com/embed/QfM5rHH_xTs?list=PLXi7NaQwA3TSpV6HAKBtrvlnPFS8jXFGu",
-      thumbnail:"http://img.youtube.com/vi/QfM5rHH_xTs/0.jpg"
+      video:"https://www.youtube.com/embed/YX40hbAHx3s",
+      thumbnail: "http://img.youtube.com/vi/YX40hbAHx3s/0.jpg",
+      title:"P vs. NP and the Computational Complexity Zoo"
     },
     {
-      video:"https://www.youtube.com/embed/lrbL1s9qwBs?list=PLXi7NaQwA3TSpV6HAKBtrvlnPFS8jXFGu",
-      thumbnail: "http://img.youtube.com/vi/lrbL1s9qwBs/0.jpg"
+      video:"https://www.youtube.com/embed/SrU9YDoXE88",
+      thumbnail:"http://img.youtube.com/vi/SrU9YDoXE88/0.jpg",
+      title:"How To Count Past Infinity"
     },
     {
-      video:"https://www.youtube.com/embed/5adMpnV5jWk?list=PLXi7NaQwA3TSpV6HAKBtrvlnPFS8jXFGu",
-      thumbnail: "http://img.youtube.com/vi/5adMpnV5jWk/0.jpg"
+      video:"https://www.youtube.com/embed/GJ4Qp2xeRds",
+      thumbnail: "http://img.youtube.com/vi/GJ4Qp2xeRds/0.jpg",
+      title:"How High Can We Build?"
     },
     {
-      video:"https://www.youtube.com/embed/5adMpnV5jWk?list=PLXi7NaQwA3TSpV6HAKBtrvlnPFS8jXFGu",
-      thumbnail: "http://img.youtube.com/vi/5adMpnV5jWk/0.jpg"
+      video:"https://www.youtube.com/embed/VNqNnUJVcVs",
+      thumbnail: "http://img.youtube.com/vi/VNqNnUJVcVs/0.jpg",
+      title: "Is Earth Actually Flat?"
     },
     {
-      video:"https://www.youtube.com/embed/5adMpnV5jWk?list=PLXi7NaQwA3TSpV6HAKBtrvlnPFS8jXFGu",
-      thumbnail: "http://img.youtube.com/vi/5adMpnV5jWk/0.jpg"
+      video:"https://www.youtube.com/embed/EgJXm65jaUs",
+      thumbnail: "http://img.youtube.com/vi/EgJXm65jaUs/0.jpg",
+      title: "Shaun Murphy 147 Break 2014 Ruhr Open Final"
     },
     {
-      video:"https://www.youtube.com/embed/5adMpnV5jWk?list=PLXi7NaQwA3TSpV6HAKBtrvlnPFS8jXFGu",
-      thumbnail: "http://img.youtube.com/vi/5adMpnV5jWk/0.jpg"
+      video:"https://www.youtube.com/embed/mXVGIb3bzHI",
+      thumbnail: "http://img.youtube.com/vi/mXVGIb3bzHI/0.jpg",
+      title: "Can Silence Actually Drive You Crazy?"
     }
   ]
   xframe_videos = []
@@ -45,17 +51,13 @@ app.controller('main',function($scope,$sce,$routeParams){
     video = {}
     video['video'] = $sce.trustAsResourceUrl(element.video)
     video['thumbnail'] = $sce.trustAsResourceUrl(element.thumbnail)
+    video['title'] = element.title
     xframe_videos.push(video)
-    console.log(video.video);
   })
 
   $scope.videos=xframe_videos;
 
   $scope.load = function(){
     $scope.video = $sce.trustAsResourceUrl($routeParams.video);
-  }
-
-  $scope.play = function(v){
-    console.log(v);
   }
 })

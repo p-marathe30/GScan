@@ -1,8 +1,13 @@
-<section class="video_panel uk-flex uk-flex-wrap uk-flex-center" uk-grid>
+<section class="video_panel uk-flex uk-flex-wrap uk-flex-center  uk-text-center" uk-grid>
   <a href="/video?video={{v.video}}" class="uk-link-reset video_links" ng-repeat="v in videos">
   <section>
-    <section class="uk-card uk-card-default uk-card-body">
+    <section class="uk-card uk-card-default uk-card-body" style="z-index:0;">
+      <section class="uk-inline-clip uk-transition-toggle">
         <img ng-src="{{v.thumbnail}}" width="300px" height="200px"/>
+        <section class="uk-transition-slide-bottom-small uk-position-bottom uk-overlay uk-overlay-default">
+          <p class="uk-h4 uk-margin-remove">{{v.title}}</p>
+        </section>
+      </section>
     </section>
   </section>
 </a>
