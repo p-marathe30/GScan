@@ -14,6 +14,9 @@ app.config(function($routeProvider,$locationProvider){
 })
 
 app.controller('main',function($scope,$sce,$routeParams){
+
+  // the following can be fetched from back-end
+  //thumbnails can be extracted from video URL in a practical implementation.
   var vids = [
     {
       video:"https://www.youtube.com/embed/YX40hbAHx3s",
